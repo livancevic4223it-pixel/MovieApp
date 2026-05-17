@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieApp.Views.AddEditMoviePage"
+             Title="Add / Edit Movie">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Title" FontAttributes="Bold"/>
+            <Entry x:Name="TitleEntry" Placeholder="Movie title"/>
+
+            <Label Text="Genre" FontAttributes="Bold"/>
+            <Picker x:Name="GenrePicker">
+                <Picker.Items>
+                    <x:String>Action</x:String>
+                    <x:String>Drama</x:String>
+                    <x:String>Crime</x:String>
+                    <x:String>Sci-Fi</x:String>
+                    <x:String>Comedy</x:String>
+                    <x:String>Horror</x:String>
+                    <x:String>Romance</x:String>
+                    <x:String>Thriller</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Year" FontAttributes="Bold"/>
+            <Entry x:Name="YearEntry" Placeholder="e.g. 2024" Keyboard="Numeric"/>
+
+            <Label Text="Description" FontAttributes="Bold"/>
+            <Editor x:Name="DescriptionEditor" Placeholder="Short description..." HeightRequest="100"/>
+
+            <Label Text="Cast" FontAttributes="Bold"/>
+            <Entry x:Name="CastEntry" Placeholder="Actor 1, Actor 2..."/>
+
+            <Label Text="Image URL" FontAttributes="Bold"/>
+            <Entry x:Name="ImageUrlEntry" Placeholder="https://..."/>
+
+            <Button Text="Save Movie" Clicked="OnSaveClicked" Margin="0,20,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

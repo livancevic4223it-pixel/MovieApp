@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MovieApp.Models"
+             x:Class="MovieApp.Views.MainPage"
+             Title="Movies">
+
+    <Grid RowDefinitions="Auto,Auto,*">
+
+        <SearchBar Grid.Row="0"
+                   x:Name="SearchBar"
+                   Placeholder="Search movies..."
+                   TextChanged="OnSearchTextChanged"
+                   Margin="10,10,10,0"/>
+
+        <ScrollView Grid.Row="1" Orientation="Horizontal" Margin="10,5">
+            <HorizontalStackLayout x:Name="GenreFilters" Spacing="8">
+                <Button Text="All" Clicked="OnGenreFilterClicked" StyleClass="GenreButton"/>
+                <Button Text="Action" Clicked="OnGenreFilterClicked" StyleClass="GenreButton"/>
+                <Button Text="Drama" Clicked="OnGenreFilterClicked" StyleClass="GenreButton"/>
+                <Button Text="Crime" Clicked="OnGenreFilterClicked" StyleClass="GenreButton"/>
+                <Button Text="Sci-Fi" Clicked="OnGenreFilterClicked" StyleClass="GenreButton"/>
+            </HorizontalStackLayout>
+        </ScrollView>
+
+        <CollectionView Grid.Row="2"
+                        x:Name="MoviesCollection"
+                        Margin="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Movie">
+                    <Border Margin="0,5" Padding="15" StrokeShape="RoundRectangle 10">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="{Binding Genre}" FontSize="13" TextColor="Gray"/>
+                                <Label Text="{Binding Year}" FontSize="13" TextColor="Gray"/>
+                                <Label Text="{Binding AverageRating, StringFormat='⭐ {0:F1}'}" FontSize="13"/>
+                            </VerticalStackLayout>
+                            <Label Grid.Column="1" Text="❤️" IsVisible="{Binding IsFavorite}"
+                                   VerticalOptions="Center" FontSize="20"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>
