@@ -55,10 +55,13 @@ namespace MovieApp.Views
             }
         }
 
-        private async void OnMovieTapped(object sender, TappedEventArgs e)
+        private async void OnMovieSelected(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Parameter is Movie movie)
+            if (e.CurrentSelection.FirstOrDefault() is Movie movie)
+            {
+                ((CollectionView)sender).SelectedItem = null;
                 await Shell.Current.GoToAsync($"moviedetail?id={movie.Id}");
+            }
         }
 
         private async void OnAddMovieClicked(object sender, EventArgs e)

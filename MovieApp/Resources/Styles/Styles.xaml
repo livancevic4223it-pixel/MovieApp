@@ -375,6 +375,35 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
+
+	<Style TargetType="Border">
+		<Setter Property="BackgroundColor" Value="#1E1E2E"/>
+		<Setter Property="Stroke" Value="#313244"/>
+		<Setter Property="Shadow">
+			<Shadow Brush="Black" Offset="0,2" Radius="4" Opacity="0.3"/>
+		</Setter>
+	</Style>
+
+	<Style TargetType="Button">
+		<Setter Property="BackgroundColor" Value="#CBA6F7"/>
+		<Setter Property="TextColor" Value="#1E1E2E"/>
+		<Setter Property="CornerRadius" Value="8"/>
+		<Setter Property="FontAttributes" Value="Bold"/>
+	</Style>
+
+	<Style TargetType="Entry">
+		<Setter Property="BackgroundColor" Value="#313244"/>
+		<Setter Property="TextColor" Value="White"/>
+		<Setter Property="PlaceholderColor" Value="#6C7086"/>
+	</Style>
+
+	<Style TargetType="Label">
+		<Setter Property="TextColor" Value="#CDD6F4"/>
+	</Style>
+
+	<Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+		<Setter Property="BackgroundColor" Value="#1E1E2E"/>
+	</Style>
   
     <!--
     <Style TargetType="TitleBar">

@@ -25,7 +25,9 @@
 
         <CollectionView Grid.Row="2"
                         x:Name="MoviesCollection"
-                        Margin="10">
+                        Margin="10"
+						SelectionMode="Single"
+                        SelectionChanged="OnMovieSelected">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Movie">
                     <Border Margin="0,5" Padding="15" StrokeShape="RoundRectangle 10">
@@ -45,5 +47,9 @@
         </CollectionView>
 
     </Grid>
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="+ Add" Clicked="OnAddMovieClicked"/>
+	</ContentPage.ToolbarItems>
 
 </ContentPage>
