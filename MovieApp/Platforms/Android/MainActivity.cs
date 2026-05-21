@@ -1,7 +1,5 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using Android.OS;
-using Plugin.LocalNotification;
 
 namespace MovieApp
 {
@@ -11,10 +9,5 @@ namespace MovieApp
         ConfigChanges.SmallestScreenSize | ConfigChanges.Density)]
     public class MainActivity : MauiAppCompatActivity
     {
-        protected override void OnCreate(Bundle? savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-            LocalNotificationCenter.CreateNotificationChannel();
-        }
     }
 }

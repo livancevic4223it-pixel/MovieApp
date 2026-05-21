@@ -27,7 +27,7 @@ namespace MovieApp.Views
         {
             if (MoviePicker.SelectedIndex < 0)
             {
-                await DisplayAlertAsync("Error", "Please select a movie.", "OK");
+                await DisplayAlert("Error", "Please select a movie.", "OK");
                 return;
             }
 
@@ -36,7 +36,7 @@ namespace MovieApp.Views
 
             if (reminderDateTime <= DateTime.Now)
             {
-                await DisplayAlertAsync("Error", "Please select a future date and time.", "OK");
+                await DisplayAlert("Error", "Please select a future date and time.", "OK");
                 return;
             }
 
@@ -52,7 +52,7 @@ namespace MovieApp.Views
             };
 
             await LocalNotificationCenter.Current.Show(notification);
-            await DisplayAlertAsync("Success", $"Reminder set for {movie.Title} at {reminderDateTime:g}", "OK");
+            await DisplayAlert("Success", $"Reminder set for {movie.Title} at {reminderDateTime:g}", "OK");
         }
     }
 }
