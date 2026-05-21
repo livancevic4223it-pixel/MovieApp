@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieApp.Views.ReminderPage"
+             Title="Set Reminder">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Select Movie" FontAttributes="Bold"/>
+            <Picker x:Name="MoviePicker"/>
+
+            <Label Text="Date" FontAttributes="Bold"/>
+            <DatePicker x:Name="ReminderDate" MinimumDate="{x:Static sys:DateTime.Today}"
+                        xmlns:sys="clr-namespace:System;assembly=mscorlib"/>
+
+            <Label Text="Time" FontAttributes="Bold"/>
+            <TimePicker x:Name="ReminderTime"/>
+
+            <Button Text="Set Reminder" Clicked="OnSetReminderClicked" Margin="0,20,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

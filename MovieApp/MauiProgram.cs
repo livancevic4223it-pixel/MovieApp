@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using MovieApp.Services;
 using MovieApp.Views;
+using Plugin.LocalNotification;
 
 namespace MovieApp
 {
@@ -11,6 +12,7 @@ namespace MovieApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseLocalNotification()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -23,6 +25,7 @@ namespace MovieApp
             builder.Services.AddTransient<TopListPage>();
             builder.Services.AddTransient<MovieDetailPage>();
             builder.Services.AddTransient<AddEditMoviePage>();
+            builder.Services.AddTransient<ReminderPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
